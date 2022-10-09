@@ -1,6 +1,6 @@
 ﻿using System;
 
-class Child
+class Person
 {
     private int age;
     private string name;
@@ -23,18 +23,18 @@ class Child
         Console.Write("Age: ");
         age = Convert.ToInt32(Console.ReadLine());
     }
-    public void PrintChild()
+    public void PrintPerson()
     {
         Console.WriteLine("{0}, {1} years old.", name, age);
     }
 
 }
 
-class StringTest
+class p2
 {
     static void Main()
     {
-        Child[] child = new Child[20];
+        Person[] child = new Person[20];
         int n, k;
         Console.Write("n = ");
         n = Convert.ToInt32(Console.ReadLine());
@@ -42,7 +42,7 @@ class StringTest
         k = Convert.ToInt32(Console.ReadLine());
         for (int i = 0; i < n; i++)
         {
-            child[i] = new Child();
+            child[i] = new Person();
         }
         if (k == 1)//1
         {
@@ -52,7 +52,7 @@ class StringTest
             }
             for (int i = 0; i < n; i++)
             {
-                child[i].PrintChild();
+                child[i].PrintPerson();
             }
         }
         if (k == 2)//2
@@ -63,7 +63,7 @@ class StringTest
             }
             for (int i = 0; i < n; i++)
             {
-                child[i].PrintChild();
+                child[i].PrintPerson();
             }
         }
         if (k == 3)//3
@@ -74,7 +74,7 @@ class StringTest
             }
             for (int i = 0; i < n; i++)
             {
-                child[i].PrintChild();
+                child[i].PrintPerson();
             }
         }
     }

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Xml.Schema;
 
-class Child
+class Person
 {
     public int age;
     public string name;
@@ -27,7 +26,7 @@ class Child
 
     public static int max(int[] ages,int n,int k)
     {
-        int max = ages[0],ind;
+        int max = ages[0];
         for(int i=0;i<n;i++)
         {
             if (max < ages[i])
@@ -49,30 +48,26 @@ class StringTest
 {
     static void Main()
     {
-        Child[] child = new Child[20];
+        Person[] child = new Person[20];
         int[] ages=new int[20];
         int n, k=0;
         Console.Write("n = ");
         n = Convert.ToInt32(Console.ReadLine());
         for (int i = 0; i < n; i++)
         {
-            child[i] = new Child();
+            child[i] = new Person();
         }
         {
             for (int i = 0; i < n; i++)
             {
                 child[i].def3();
             }
-            /*for (int i = 0; i < n; i++)
-            {
-                child[i].PrintChild();
-            }*/
         }
         for(int i=0;i<n;i++)
         {
             ages[i] = child[i].age;
         }
-        k=Child.max(ages,n,k);
+        k=Person.max(ages,n,k);
         child[k].PrintChild();
     }
 }

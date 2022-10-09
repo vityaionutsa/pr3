@@ -1,18 +1,18 @@
 ﻿using System;
 
-class Child
+class Person
 {
     private int age;
     private string name;
-    public Child() { }
+    public Person() { }
 
-    public Child(string name, int age)
+    public Person(string name, int age)
     {
         this.name = name;
         this.age = age;
     }
 
-    public void PrintChild()
+    public void PrintPerson()
     {
         Console.WriteLine("{0}, {1} years old.", name, age);
     }
@@ -27,7 +27,7 @@ class StringTest
         n = Convert.ToInt32(Console.ReadLine());
         string[] name = new string[n];
         int[] age = new int[n];
-        Child[] a = new Child[n];
+        Person[] a = new Person[n];
         for (int i = 0; i < n; i++)
         {
             Console.Write("Name: ");
@@ -35,11 +35,11 @@ class StringTest
             Console.Write("How old is {0}: ", name[i]);
             age[i] = Convert.ToInt32(Console.ReadLine());
 
-            a[i] = new Child(name[i], age[i]);
+            a[i] = new Person(name[i], age[i]);
         }
         for (int i = 0; i < n; i++)
         {
-            a[i].PrintChild();
+            a[i].PrintPerson();
         }
     }
 }
