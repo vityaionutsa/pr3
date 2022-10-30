@@ -4,13 +4,30 @@ class Person
 {
     private int age;
     private string name;
-    public Person() { }
 
-    public Person(string name, int age)
+    public string Name
     {
-        this.name = name;
-        this.age = age;
+        get
+        {
+            return name;
+        }
+        set
+        {
+            name = value;
+        }
     }
+    public int Age
+    {
+        get
+        {
+            return age;
+        }
+        set
+        {
+            age = value;
+        }
+    }
+
 
     public void PrintPerson()
     {
@@ -22,24 +39,20 @@ class StringTest
 {
     static void Main()
     {
-        int n;
         Console.Write("n = ");
-        n = Convert.ToInt32(Console.ReadLine());
-        string[] name = new string[n];
-        int[] age = new int[n];
-        Person[] a = new Person[n];
-        for (int i = 0; i < n; i++)
+        int n = Convert.ToInt32(Console.ReadLine());
+        Person[] person=new Person[n];
+        for (int i=0;i<n;i++)
         {
+            person[i]=new Person();
             Console.Write("Name: ");
-            name[i] = Console.ReadLine();
-            Console.Write("How old is {0}: ", name[i]);
-            age[i] = Convert.ToInt32(Console.ReadLine());
-
-            a[i] = new Person(name[i], age[i]);
+            person[i].Name = Console.ReadLine();
+            Console.Write("How old is {0}: ", person[i].Name);
+            person[i].Age = Convert.ToInt32(Console.ReadLine());
         }
         for (int i = 0; i < n; i++)
         {
-            a[i].PrintPerson();
+            person[i].PrintPerson();
         }
     }
 }
