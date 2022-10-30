@@ -2,14 +2,26 @@
 
 class DM
 {
-    public static TimeSpan Mod(string dt1,string dt2)
+    private string dt1, dt2;
+
+    public string Dt1
     {
-        DateTime date1,date2;
+        get { return dt1; }
+        set { dt1 = value; }
+    }
+    public string Dt2
+    {
+        get { return dt2; }
+        set { dt2 = value; }
+    }
+    public void Mod()
+    {
+        DateTime date1, date2;
         TimeSpan date3;
         date1 = Convert.ToDateTime(dt1);
         date2 = Convert.ToDateTime(dt2);
-        date3=date2.Subtract(date1);
-        return date3;
+        date3 = date2.Subtract(date1);
+        Console.WriteLine(date3);
     }
 }
 
@@ -17,14 +29,10 @@ class StringTest
 {
     static void Main()
     {
-        string dt1="1992, 05, 31", dt2="2016, 06, 17";
-        TimeSpan date;
-        /*Console.Write("dt1(year, month, day): ");
-        dt1 = Console.ReadLine();
-        Console.Write("dt2(year, month, day): ");
-        dt2 = Console.ReadLine();*/
-        date=DM.Mod(dt1,dt2);
-        Console.WriteLine(date);
+        DM dm = new DM();
+        dm.Dt1 = "1992, 05, 31";
+        dm.Dt2 = "2016, 06, 17";
+        dm.Mod();
         Console.ReadLine();
     }
 }
